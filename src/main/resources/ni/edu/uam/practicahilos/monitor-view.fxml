@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="ni.edu.uam.practicahilos.MonitorController"
+      alignment="CENTER"
+      spacing="16"
+      prefWidth="540"
+      prefHeight="460">
+
+    <padding>
+        <Insets top="25" right="25" bottom="25" left="25"/>
+    </padding>
+
+    <Label text="Monitor de Procesamiento Empresarial"
+           style="-fx-font-size: 18px;"/>
+
+    <!-- Sección Clientes -->
+    <Label text="Clientes — 100 registros"
+           style="-fx-font-weight: bold;"/>
+
+    <Label fx:id="lblEstadoClientes"
+           text="Esperando inicio"/>
+
+    <ProgressBar fx:id="barraClientes"
+                 progress="0"
+                 prefWidth="420"/>
+
+    <Label fx:id="lblPorcentajeClientes"
+           text="0%"/>
+
+    <!-- Sección Productos -->
+    <Label text="Productos — 50 registros"
+           style="-fx-font-weight: bold;"/>
+
+    <Label fx:id="lblEstadoProductos"
+           text="Esperando inicio"/>
+
+    <ProgressBar fx:id="barraProductos"
+                 progress="0"
+                 prefWidth="420"/>
+
+    <Label fx:id="lblPorcentajeProductos"
+           text="0%"/>
+
+    <HBox alignment="CENTER" spacing="10">
+        <Button fx:id="btnIniciar"
+                text="Iniciar"
+                onAction="#iniciarProcesos"/>
+
+        <Button fx:id="btnDetener"
+                text="Detener"
+                onAction="#detenerProcesos"
+                disable="true"/>
+
+        <Button fx:id="btnReiniciar"
+                text="Reiniciar"
+                onAction="#reiniciarProcesos"/>
+    </HBox>
+
+</VBox>
