@@ -10,40 +10,21 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class MonitorController {
 
-    @FXML
-    private Label lblEstadoClientes;
-
-    @FXML
-    private Label lblPorcentajeClientes;
-
-    @FXML
-    private ProgressBar barraClientes;
-
-    @FXML
-    private Label lblEstadoProductos;
-
-    @FXML
-    private Label lblPorcentajeProductos;
-
-    @FXML
-    private ProgressBar barraProductos;
-
-    @FXML
-    private Button btnIniciar;
-
-    @FXML
-    private Button btnDetener;
-
-    @FXML
-    private Button btnReiniciar;
-
+    @FXML private Label lblEstadoClientes;
+    @FXML private Label lblPorcentajeClientes;
+    @FXML private ProgressBar barraClientes;
+    @FXML private Label lblEstadoProductos;
+    @FXML private Label lblPorcentajeProductos;
+    @FXML private ProgressBar barraProductos;
+    @FXML private Button btnIniciar;
+    @FXML private Button btnDetener;
+    @FXML private Button btnReiniciar;
     private Thread hiloClientes;
     private Thread hiloProductos;
 
     private final AtomicInteger hilosTerminados = new AtomicInteger(0);
 
-    @FXML
-    private void iniciarProcesos() {
+    @FXML private void iniciarProcesos() {
 
         if ((hiloClientes != null && hiloClientes.isAlive()) ||
             (hiloProductos != null && hiloProductos.isAlive())) {
@@ -146,8 +127,7 @@ public class MonitorController {
         }
     }
 
-    @FXML
-    private void detenerProcesos() {
+    @FXML private void detenerProcesos() {
 
         btnDetener.setDisable(true);
 
@@ -160,8 +140,7 @@ public class MonitorController {
         }
     }
 
-    @FXML
-    private void reiniciarProcesos() {
+    @FXML private void reiniciarProcesos() {
 
         if ((hiloClientes != null && hiloClientes.isAlive()) ||
             (hiloProductos != null && hiloProductos.isAlive())) {

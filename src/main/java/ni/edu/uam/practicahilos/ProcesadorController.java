@@ -11,28 +11,15 @@ import javafx.stage.Stage;
 
 public class ProcesadorController {
 
-    @FXML
-    private Label lblEstado;
-
-    @FXML
-    private Label lblPorcentaje;
-
-    @FXML
-    private ProgressBar barraProgreso;
-
-    @FXML
-    private Button btnIniciar;
-
-    @FXML
-    private Button btnDetener;
-
-    @FXML
-    private Button btnReiniciar;
-
+    @FXML private Label lblEstado;
+    @FXML private Label lblPorcentaje;
+    @FXML private ProgressBar barraProgreso;
+    @FXML private Button btnIniciar;
+    @FXML private Button btnDetener;
+    @FXML private Button btnReiniciar;
     private Thread hiloProceso;
 
-    @FXML
-    private void iniciarProceso() {
+    @FXML private void iniciarProceso() {
 
         if (hiloProceso != null && hiloProceso.isAlive()) {
             return;
@@ -87,8 +74,7 @@ public class ProcesadorController {
         hiloProceso.start();
     }
 
-    @FXML
-    private void detenerProceso() {
+    @FXML private void detenerProceso() {
 
         if (hiloProceso != null && hiloProceso.isAlive()) {
             btnDetener.setDisable(true);
@@ -97,8 +83,7 @@ public class ProcesadorController {
         }
     }
 
-    @FXML
-    private void reiniciarProceso() {
+    @FXML private void reiniciarProceso() {
 
         if (hiloProceso != null && hiloProceso.isAlive()) {
             return;
@@ -111,8 +96,7 @@ public class ProcesadorController {
         habilitarBotones();
     }
 
-    @FXML
-    private void abrirReto() throws Exception {
+    @FXML private void abrirReto() throws Exception {
 
         FXMLLoader loader = new FXMLLoader(
             MainApp.class.getResource("monitor-view.fxml")

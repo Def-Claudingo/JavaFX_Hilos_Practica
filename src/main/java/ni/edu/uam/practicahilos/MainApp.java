@@ -7,8 +7,7 @@ import javafx.stage.Stage;
 
 public class MainApp extends Application {
 
-    @Override
-    public void start(Stage stage) throws Exception {
+    @Override public void start(Stage stage) throws Exception {
 
         FXMLLoader loader = new FXMLLoader(
             MainApp.class.getResource("procesador-view.fxml")
